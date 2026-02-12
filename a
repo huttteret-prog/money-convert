@@ -1,0 +1,21 @@
+def convert_to_usd(cad_amount, rate=1.27):
+    return cad_amount / rate
+
+def convert_to_cad(usd_amount, rate=1.27):
+    return usd_amount * rate
+
+def main():
+    question = input("Canadian to USD (canadian) or USD to Canadian (american): ").lower()
+
+    if question == "canadian":
+        amount = float(input("Enter amount in Canadian dollars: "))
+        converted = convert_to_usd(amount)
+        print(f"${amount} CAD is ${converted:.2f} USD.")
+    elif question == "american":
+        amount = float(input("Enter amount in US dollars: "))
+        converted = convert_to_cad(amount)
+        print(f"${amount} USD is ${converted:.2f} CAD.")
+    else:
+        print("Not a valid choice.")
+
+main()
